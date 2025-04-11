@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* Reduced padding */
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px; /* Reduced font size */
+            margin-bottom: 10px;
+        }
+        form {
+            margin-bottom: 10px; /* Reduced margin between form elements */
+        }
+        form input,
+        form button {
+            width: 100%;
+            padding: 10px; /* Reduced padding */
+            margin: 8px 0; /* Reduced margin */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px; /* Smaller font size */
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .auth-links {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Signup</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <hr>
+
+    <div class="auth-links">
+        <p>Already have an account?</p>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+</div>
+
+</body>
+</html>
+
